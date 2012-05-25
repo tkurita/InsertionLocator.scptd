@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- InstanceBegin template="../../../../_Templates/Help_Contetns_enTitle.dwt" -->
+
+    <head>
+      <meta name="keywords" content="InsertionLocator, AppleScript, insertion location" />
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <title>InsertionLocator</title>
+      <!-- #BeginHeadLocked "" -->
+        <link href="../03_history/assets/default2.css" type="text/css" rel="styleSheet" />
+        <link href="../03_history/assets/help.css" type="text/css" rel="stylesheet" media="screen" />
+        <script type="text/javascript" language="JavaScript1.4" src="../03_history/assets/SmartHeader.js"></script>
+      <!-- #EndHeadLocked -->
+      <link href="assets/AppleScript.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+
+    <body>
+      <p id="smartheader" style="visibility:hidden"><!-- InstanceBeginEditable name="SmartHeader" --><a href="index.html">InsertionLocator Help</a>
+		<!-- InstanceEndEditable --></p>
+      <!-- InstanceBeginEditable name="Body" -->
+        <h1>InsertionLocator</h1>
+        <h2><a id="what" name="what"></a>What</h2>
+        <p>InsertionLocator is an AppleScript module to obtain insertion/selected location in Finder with smarter way than Finder does.</p>
+        <p>Finder's insertion location always means the top level folder of a Finder window. This behavior is not enough in same cases, for example an expanded sub-folder shown in a list view window can not be the insertion location.</p>
+        <p>InsertionLocator allow following behaviors.</p>
+        <ul>
+          <li>If a file is selected, the container of the file can be insertion location.
+					
+					
+					
+          <li>The selected folder can be insertion location.
+					
+					
+					
+          
+          <li>In the case of folders in the list view window, expanded folders can be insertion locations. Closed sub-folders will not be insertion location, even if these folders are selected.</ul>
+        <p>These behavior can be customizable to meet your application.</p>
+        <!--begin abs_link-->
+        <p>GUI Scripting must be enabled for full features of InsertionLocator. <a href="http://www.script-factory.net/web-content/en/index.html#GUIScriptingChecker">GUIScriptingChercker</a> is useful to check availability  of </p>
+        <!--end abs_link-->
+        <h2><a id="sample" name="sample"></a>Sample</h2>
+<div class="sourceCode">
+<div>
+<span class="langKeyword">property</span> <span class="userDefine">GUIScriptingChecker</span> <span class="normal">:</span> <span class="appKeyword">module</span>
+</div>
+<div>
+<span class="langKeyword">property</span> <span class="userDefine">InsertionLocator</span> <span class="normal">:</span> <span class="appKeyword">module</span>
+</div>
+<br />
+<div>
+<span class="appKeyword">boot</span> <span class="normal">(</span><span class="appKeyword">module loader</span><span class="normal">)</span> <span class="appKeyword">for</span> <span class="langKeyword">me</span>
+</div>
+<br />
+<div>
+<span class="langKeyword">if</span> <span class="langKeyword">not</span> <span class="userDefine">do</span><span class="normal">()</span> <span class="langKeyword">of</span> <span class="userDefine">GUIScriptingChecker</span> <span class="langKeyword">then</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="normal">--</span><span class="comment"> GUI Scripting is disable</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">return</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">if</span>
+</div>
+<br />
+<div>
+<span class="langKeyword">set</span> <span class="userDefine">a_locator</span> <span class="langKeyword">to</span> <span class="appKeyword">make</span> <span class="userDefine">InsertionLocator</span>
+</div>
+<div>
+<span class="appKeyword">log</span> <span class="userDefine">a_locator</span><span class="normal">'s</span> <span class="userDefine">do</span><span class="normal">()</span>
+</div>
+<br />
+<div>
+<span class="normal">--</span><span class="comment"> Folders whose contents are not shown should not be insertion location</span>
+</div>
+<div>
+<span class="appKeyword">log</span> <span class="userDefine">a_locator</span><span class="normal">'s</span> <span class="userDefine">set_allow_closed_folder</span><span class="normal">(</span><span class="appKeyword">false</span><span class="normal">)'s</span> <span class="userDefine">do</span><span class="normal">()</span>
+</div>
+<div>
+<span class="appKeyword">log</span> <span class="userDefine">a_locator</span><span class="normal">'s</span> <span class="userDefine">is_closed_folder</span><span class="normal">()</span>
+</div>
+<div class="scriptButton" >
+<input type="button" value="InsertionLocator Sample" onclick="location.href='applescript://com.apple.scripteditor?action=new%26script=property%20GUIScriptingChecker%20:%20module%0Dproperty%20InsertionLocator%20:%20module%0D%0Dboot%20(module%20loader)%20for%20me%0D%0Dif%20not%20do()%20of%20GUIScriptingChecker%20then%0D%09--%20GUI%20Scripting%20is%20disable%0D%09return%0Dend%20if%0D%0Dset%20a_locator%20to%20make%20InsertionLocator%0Dlog%20a_locator%27s%20do()%0D%0D--%20Folders%20whose%20contents%20are%20not%20shown%20should%20not%20be%20insertion%20location%0Dlog%20a_locator%27s%20set_allow_closed_folder(false)%27s%20do()%0Dlog%20a_locator%27s%20is_closed_folder()%0D'" />
+</div>
+</div>        
+      <!-- InstanceEndEditable -->
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="12" region="0" t="DateTime" w="76">Sat, Jul 31, 2010</csobj> ; <csobj format="LongTime" h="12" region="0" t="DateTime" w="51">2:26:35 PM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
+
+  <!-- InstanceEnd -->
+
+</html>

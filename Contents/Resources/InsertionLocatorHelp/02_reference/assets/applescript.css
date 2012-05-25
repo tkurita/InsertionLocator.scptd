@@ -1,0 +1,72 @@
+.uncompiled {
+	font-family : Osaka-Mono;
+	color : #7F007F;
+}
+.normal {
+	font-family : Osaka;
+	color : #000000;
+}
+.langKeyword {
+	font-family : Osaka;
+	color : #0000FF;
+}
+.appKeyword {
+	font-family : Osaka;
+	color : #0000FF;
+}
+.comment {
+	font-family : Osaka;
+	color : #4C4C4C;
+}
+.literal {
+	font-family : Osaka;
+	color : #000000;
+}
+.userDefine {
+	font-family : Osaka;
+	color : #407F00;
+}
+.stringLiteral {
+	font-family : Osaka;
+	color : #7F007F;
+}
+.commandName {
+	font-family : Verdana-Bold;
+	color : #0000FF;
+}
+.parameterName {
+	font-family : Verdana;
+	color : #0000FF;
+}
+.className {
+	font-family : Verdana-Italic;
+	color : #0000FF;
+}
+.enumeratedValues {
+	font-family : Verdana;
+	color : #6C05D3;
+}
+.additionCommandName {
+	font-family : Verdana;
+	color : #4A1E7F;
+}
+.additionParameterName {
+	font-family : Verdana-Bold;
+	color : #0016A0;
+}
+.additionClass {
+	font-family : Verdana;
+	color : #0016A0;
+}
+.additionProperty {
+	font-family : Verdana-Italic;
+	color : #0016A0;
+}
+.additionEnumeratedValue {
+	font-family : Verdana;
+	color : #4415A0;
+}
+.AppleScriptFormattingStyle18 {
+	font-family : Verdana;
+	color : #261252;
+}
