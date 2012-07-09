@@ -18,7 +18,7 @@ property name : "InsertionLocator"
 
 (*!@title InsertionLocator Reference
 
-* Version : 1.3
+* Version : 1.3.1b
 * Author : Tetsuro KURITA ((<tkurita@mac.com>))
 *)
 
@@ -153,6 +153,17 @@ on do()
 	return my _lastResult
 end do
 
+
+(*!
+@abstruct Get a result of formaly called ((<do>))().
+@description
+The result of ((<do>)) handler is cached in InsertionLocator.
+This handler is used to obtain the cached selected location.
+@result alias 
+*)
+on last_result()
+	return my _lastResult
+end last_result
 
 (*!@group Customize Behaviors 
 Handlers to customize behaviors. Following handlers should be called before ((<do>))().
@@ -342,13 +353,26 @@ end is_expanded
 on debug()
 	--set _allowClosedFolder to false
 	--activate application "Finder"
-	activate
-	--set_allow_closed_folder(false)
+	--activate
+	
+	set_allow_closed_folder(false)
+	set InsertionLocator to me
+	script remote_handler
+		InsertionLocator's do()
+		return InsertionLocator
+	end script
+	
+	set tm to start timer
 	do()
+	lap time tm
+	tell application "Finder"
+		run script remote_handler
+	end tell
+	time records of tm
 end debug
 
 on run
-	--return debug()
+	return debug()
 	try
 		show helpbook (path to me) with recovering InfoPlist
 	on error msg number errno
