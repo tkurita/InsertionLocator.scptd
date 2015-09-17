@@ -4,12 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<title>set_use_gui_scripting</title>
+		<title>last_result</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
 		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
 		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
-		<meta name="keywords" content="set_use_gui_scripting, InsertionLocator" />
+		<meta name="keywords" content="last_result, InsertionLocator" />
 		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
 		<link href="../../" id="HelpBookRoot" />
 	</head>
@@ -27,27 +27,21 @@
 		</div>
 		<div id="contents">
 		<div class="elementTitle">
-<a id="set_use_gui_scripting" name="set_use_gui_scripting">set_use_gui_scripting</a>
+<a id="last_result" name="last_result">last_result</a>
 </div>
 <p class="sourceCode">
-<span class="userDefine">set_use_gui_scripting</span><span class="normal">(</span><span class="userDefine">a_flag</span><span class="normal">)</span>
+<span class="userDefine">last_result</span><span class="normal">()</span>
 <a href="../assets/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
 <img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
 </a></p>
-<p>If false is given, commands depends of GUI Scripting is not used. But some functions are lost.</p>
+<p>Get a result of formaly called <a href="do.html">do</a>().</p>
 
 
-<p>The default value is true. If false is passed, <a href="is_closed_folder.html">is_closed_folder</a>() will not return correct value and the value passed to <a href="set_allow_closed_folder.html">set_allow_closed_folder</a>() will be ignored in some cases.</p>
-<div class="subHeading">
-Parameters
-</div>
-<ul>
-<li>a_flag (boolean)</li>
-</ul>
+<p>The result of <a href="do.html">do</a> handler is cached in InsertionLocator.This handler is used to obtain the cached selected location.</p>
 <div class="subHeading">
 Result
 </div>
-<p>script object : me</p>
+<p>alias </p>
 		</div>
 	</body>
 

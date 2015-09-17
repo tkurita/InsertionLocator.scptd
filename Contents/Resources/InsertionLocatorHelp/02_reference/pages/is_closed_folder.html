@@ -9,21 +9,24 @@
 		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
 		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
 		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
-		<meta name="keywords" content="is_closed_folder" />
+		<meta name="keywords" content="is_closed_folder, InsertionLocator" />
 		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+		<link href="../../" id="HelpBookRoot" />
 	</head>
 
 	<body>
-		<div style="visibility:hidden"><a href="../../" id="HelpBookRoot"></a></div>
-		<div id="smartheader">
-			<table width="95%" border="0" cellspacing="2" cellpadding="0">
-				<tr>
-					<td align="left"><a href="../contents.html">InsertionLocator Reference</a></td>
-					<td align="right"><a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a></td>
-				</tr>
-			</table>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScriptWithBundleRoot(this)" href="../assets/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">InsertionLocator Reference</a>
+			</div>
+			</div>
 		</div>
-<div class="elementTitle">
+		<div id="contents">
+		<div class="elementTitle">
 <a id="is_closed_folder" name="is_closed_folder">is_closed_folder</a>
 </div>
 <p class="sourceCode">
@@ -32,7 +35,10 @@
 <img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
 </a></p>
 <p>If the contents of the result of <a href="do.html">do</a>() is not displayed in Finder, true should be returned.</p>
+
+
 <p>When a result of <a href="do.html">do</a>() is a target folder of a Finder window, false should be returned. If the result of <a href="do.html">do</a>() is a sub item of Finder window, true should be returned. But the view of the Finder window is list view and the item is expanded, false will be returned.</p>
+		</div>
 	</body>
 
 </html>
