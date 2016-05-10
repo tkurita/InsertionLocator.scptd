@@ -12,7 +12,7 @@ h4   {	margin-left: 1em }
 
 
 p     {	line-height: 160%;
-	margin-right: 1.5em;
+	margin-right: 0.5em;
 	margin-left: 1.5em }
 dl {
 	line-height: 140%  }
@@ -21,7 +21,7 @@ ul {
 li  {
 	line-height: inherit ;
 	margin-top: 0.5em;
-	margin-right: 1.5em;
+	margin-right: 0.5em;
 	margin-bottom: 0.5em; }
 table { margin: 0; padding: 0; }
 .bigstrong {
@@ -55,5 +55,5 @@ table { margin: 0; padding: 0; }
 .footer { width: 100%; clear: both; margin-right: 0; margin-left: 0; padding-right: 0; padding-left: 0; border-top: 1pt solid gray; }
 .backforth-navi { position: relative; float: right; }
 .icon-img { vertical-align: middle; }
-.level-header { margin: 0.5ex 1.5em 1ex; padding: 0.5ex 1em; border-bottom: 1px solid gray; }
+.level-header { margin: 0.5ex 10px 1ex; padding: 0.5ex 10px 0.5ex 20px; border-bottom: 1px solid gray; }
 #contents { position: relative; margin: 0 10px 10px; padding: 0; min-width: 600px; }
