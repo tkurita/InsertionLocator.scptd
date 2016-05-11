@@ -4,7 +4,7 @@ a:visited {
 	color: #999966  }
 a:active { color: #f66  }
 body, td { font-size: 12px; }
-body { color: black; background-color: white  ; margin: 0; padding: 0; }
+body { color: black; background-color: white; margin: 0; padding: 0; }
 h1 { font-weight: bold; font-size: 250%; font-family: Times, serif; margin: 1ex 0 1.5ex; padding: 0 0 0.5ex; border-bottom: thick solid gray          }
 h2 { font-weight: bold; font-size: 130%; font-family: Osaka, "Lucida Grande", Arial, sans-serif  ; }
 h3 { font-weight: bold; font-size: 110%  ; }
@@ -55,5 +55,5 @@ table { margin: 0; padding: 0; }
 .footer { width: 100%; clear: both; margin-right: 0; margin-left: 0; padding-right: 0; padding-left: 0; border-top: 1pt solid gray; }
 .backforth-navi { position: relative; float: right; }
 .icon-img { vertical-align: middle; }
-.level-header { margin: 0.5ex 10px 1ex; padding: 0.5ex 10px 0.5ex 20px; border-bottom: 1px solid gray; }
+.level-header { background-color: white; margin: 0 0 0 0; padding: 0.5ex 0 0.5ex 20px; border-bottom: 1px solid gray; }
 #contents { position: relative; margin: 0 10px 10px; padding: 0; min-width: 600px; }

@@ -1,5 +1,5 @@
 .uncompiled {
-	font-family : Courier;
+	font-family : Menlo-Regular;
 	color : #7F007F;
 }
 .normal {
@@ -47,8 +47,8 @@
 	color : #6C05D3;
 }
 .enumeratedValues {
-	font-family : Verdana;
-	color : #4A1E7F;
+	font-family : Verdana-Italic;
+	color : #6C05D3;
 }
 .additionCommandName {
 	font-family : Verdana-Bold;
@@ -67,6 +67,6 @@
 	color : #4415A0;
 }
 .additionEnumeratedValue {
-	font-family : Verdana;
-	color : #261252;
+	font-family : Verdana-Italic;
+	color : #4415A0;
 }
