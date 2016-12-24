@@ -7,7 +7,7 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>InsertionLocatorHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>InsertionLocator Help</string>
+	<string>Scriptfactory.InsertionLocator.help</string>
 	<key>CFBundleIdentifier</key>
 	<string>Scriptfactory.InsertionLocator</string>
 	<key>CFBundleShortVersionString</key>
@@ -31,7 +31,7 @@
 		<key>positionOfDivider</key>
 		<real>620</real>
 		<key>savedFrame</key>
-		<string>728 119 856 758 0 0 1440 877 </string>
+		<string>588 119 856 758 0 0 1440 877 </string>
 		<key>selectedTab</key>
 		<string>log</string>
 	</dict>

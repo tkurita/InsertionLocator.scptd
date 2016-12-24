@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>InsertionLocator Reference</title>
+		<meta name="AppleTitle" content="InsertionLocator Reference" />
+
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="assets/default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="InsertionLocator, AppleScript" />
+		<script type="text/javascript" src="assets-helpbook/run_helpscript.js"></script>
+		<script type="text/javascript" src="assets/navibar-jump.js"></script>
+        <link id="helpviewer-handler-helper" href="assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="assets-helpbook/helpviewer-handler-enable.js"></script>
+        <link href="./" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+				<a onclick="return runHelpScriptWithBundleRoot(this)" href="assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+				<!-- InstanceBeginEditable name="to-root" --><!-- InstanceEndEditable -->
+			</div>
+			<select onchange="navibarJump(this)">
+<option value="">
+§
+</option>
+<option value="#BasicUsage">
+Basic Usage
+</option>
+<option value="#Constructor_Method_">
+Constructor Method 
+</option>
+<option value="#make">
+- make
+</option>
+<option value="#Getting_Insertion_Location">
+Getting Insertion Location
+</option>
+<option value="#do">
+- do
+</option>
+<option value="#last_result">
+- last_result
+</option>
+<option value="#Customize_Behaviors_">
+Customize Behaviors 
+</option>
+<option value="#set_allow_package_contents">
+- set_allow_package_contents
+</option>
+<option value="#set_use_gui_scripting">
+- set_use_gui_scripting
+</option>
+<option value="#set_allow_closed_folder">
+- set_allow_closed_folder
+</option>
+<option value="#Accessors">
+Accessors
+</option>
+<option value="#is_determined_by_selection">
+- is_determined_by_selection
+</option>
+<option value="#is_location_in_window">
+- is_location_in_window
+</option>
+<option value="#target_window">
+- target_window
+</option>
+<option value="#view_type">
+- view_type
+</option>
+<option value="#is_closed_folder">
+- is_closed_folder
+</option>
+</select>
+			</div>
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><!-- InstanceEndEditable -->
+		<div id="contents">
+		<h1>InsertionLocator Reference</h1>
+<ul>
+<li>Version : 1.3.3</li>
+<li>Author : Tetsuro KURITA <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
+<li>Requirements : Mac OS X 10.5 or later</li>
+<li><a href="http://www.script-factory.net/XModules/InsertionLocator/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/InsertionLocator/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/InsertionLocator.scptd">Repository</a> </li>
+</ul>
+<p>InsertionLocator is an AppleScript module to obtain insertion/selected location in Finder with a smarter way than Finder does.</p>
+<p>Finder's insertion location always means the top level folder of a Finder window. This behavior is not enough in same cases, for example an expanded sub-folder shown in a list view window can not be the insertion location.</p>
+<p>InsertionLocator allow following behaviors.</p>
+<ul>
+<li>If a file is selected, the container of the file can be insertion location.</li>
+<li>The selected folder can be insertion location.</li>
+<li>In the case of folders in the list view window, expanded folders can be insertion locations. Closed sub-folders will not be insertion location, even if these folders are selected.</li>
+</ul>
+<p>These behavior can be customizable to meet your application.</p>
+<p>GUI Scripting must be enabled for full features of InsertionLocator.<a href="help:openbook='GUIScriptingChecker Help'">GUIScriptingChercker</a> is useful to check availability of GUI Scripting.</p>
+<h2 id="BasicUsage">Basic Usage</h2>
+<div class="sourceCode">
+<div class="scriptButton">
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20GUIScriptingChecker%20:%20script%20%22GUIScriptingChecker%22%0Duse%20InsertionLocator%20:%20script%20%22InsertionLocator%22%0D%0Dif%20not%20do()%20of%20GUIScriptingChecker%20then%0D%09--%20GUI%20Scripting%20is%20disable%0D%09return%0Dend%20if%0D%0Dtell%20(make%20InsertionLocator)%0D%09log%20do()%0D%09log%20is_closed_folder()%0D%09--%20Folders%20whose%20contents%20are%20not%20shown%20should%20not%20be%20insertion%20location%0D%09log%20set_allow_closed_folder(false)%27s%20do()%0D%09log%20is_closed_folder()%0Dend%20tell" />
+</div><div>
+<span class="langKeyword">use</span> <span class="userDefine">GUIScriptingChecker</span><span class="normal"> : </span><span class="className">script</span><span class="normal"> &quot;GUIScriptingChecker&quot;</span>
+</div>
+<div>
+<span class="langKeyword">use</span> <span class="userDefine">InsertionLocator</span><span class="normal"> : </span><span class="className">script</span><span class="normal"> &quot;InsertionLocator&quot;</span>
+</div>
+<br />
+<div>
+<span class="langKeyword">if</span> <span class="langKeyword">not</span> <span class="userDefine">do</span><span class="normal">() </span><span class="langKeyword">of</span> <span class="userDefine">GUIScriptingChecker</span> <span class="langKeyword">then</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="comment">-- GUI Scripting is disable</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">return</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">if</span>
+</div>
+<br />
+<div>
+<span class="langKeyword">tell</span><span class="normal"> (</span><span class="commandName">make</span> <span class="userDefine">InsertionLocator</span><span class="normal">)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">do</span><span class="normal">()</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">()</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="comment">-- Folders whose contents are not shown should not be insertion location</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">set_allow_closed_folder</span><span class="normal">(</span><span class="enumeratedValues">false</span><span class="normal">)'s </span><span class="userDefine">do</span><span class="normal">()</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">()</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">tell</span>
+</div>
+</div>
+<h2 id="Constructor_Method_">Constructor Method </h2>
+<h3 id="make"><a href="pages/make.html">make</a></h3>
+<p>Make a new instance.</p>
+<h2 id="Getting_Insertion_Location">Getting Insertion Location</h2>
+<h3 id="do"><a href="pages/do.html">do</a></h3>
+<p>Getting selected location in Finder</p>
+<h3 id="last_result"><a href="pages/last_result.html">last_result</a></h3>
+<p>Get a result of formaly called <a href="pages/do.html">do</a>().</p>
+<h2 id="Customize_Behaviors_">Customize Behaviors </h2>
+<p>Handlers to customize behaviors. Following handlers should be called before <a href="pages/do.html">do</a>().</p>
+<h3 id="set_allow_package_contents"><a href="pages/set_allow_package_contents.html">set_allow_package_contents</a></h3>
+<p>If true is given, the result of <a href="pages/do.html">do</a>() may package or its contents.</p>
+<h3 id="set_use_gui_scripting"><a href="pages/set_use_gui_scripting.html">set_use_gui_scripting</a></h3>
+<p>If false is given, commands depends of GUI Scripting is not used. But some functions are lost.</p>
+<h3 id="set_allow_closed_folder"><a href="pages/set_allow_closed_folder.html">set_allow_closed_folder</a></h3>
+<p>If false is given, <a href="pages/do.html">do</a>() should not return the folder whose contents are not visible.</p>
+<h2 id="Accessors">Accessors</h2>
+<p>Handlers to access additional information related the result of <a href="pages/do.html">do</a>().Following handlers can be used after <a href="pages/do.html">do</a>().</p>
+<h3 id="is_determined_by_selection"><a href="pages/is_determined_by_selection.html">is_determined_by_selection</a></h3>
+<p>If the result of <a href="pages/do.html">do</a>() is determined by selected items of Finder, true will be returned.</p>
+<h3 id="is_location_in_window"><a href="pages/is_location_in_window.html">is_location_in_window</a></h3>
+<p>If the result of <a href="pages/do.html">do</a>() is contained in Finder window 1, true should be returned.</p>
+<h3 id="target_window"><a href="pages/target_window.html">target_window</a></h3>
+<p>A reference to the window containing the result of <a href="pages/do.html">do</a>() should be returned.</p>
+<h3 id="view_type"><a href="pages/view_type.html">view_type</a></h3>
+<p>The view type of  the window containing the result of <a href="pages/do.html">do</a>().</p>
+<h3 id="is_closed_folder"><a href="pages/is_closed_folder.html">is_closed_folder</a></h3>
+<p>If the contents of the result of <a href="pages/do.html">do</a>() is not displayed in Finder, true should be returned.</p>
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><!-- InstanceEndEditable -->
+	</body>
+
+</html>
