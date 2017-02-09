@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleGetInfoString</key>
-	<string>1.3.2 Copyright 2007-2016, Tetsuro KURITA</string>
+	<string>1.3.3 Copyright 2007-2016, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>InsertionLocatorHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>Scriptfactory.InsertionLocator.help</string>
+	<string>net.script-factory.InsertionLocator.help</string>
 	<key>CFBundleIdentifier</key>
-	<string>Scriptfactory.InsertionLocator</string>
+	<string>net.script-factory.InsertionLocator</string>
+	<key>CFBundleName</key>
+	<string>InsertionLocator</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.3.3</string>
 	<key>CFBundleVersion</key>
