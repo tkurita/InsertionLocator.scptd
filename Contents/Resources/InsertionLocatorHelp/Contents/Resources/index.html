@@ -104,7 +104,7 @@ Accessors
 <h2 id="BasicUsage">Basic Usage</h2>
 <div class="sourceCode">
 <div class="scriptButton">
-    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20GUIScriptingChecker%20:%20script%20%22GUIScriptingChecker%22%0Duse%20InsertionLocator%20:%20script%20%22InsertionLocator%22%0D%0Dif%20not%20do()%20of%20GUIScriptingChecker%20then%0D%09--%20GUI%20Scripting%20is%20disable%0D%09return%0Dend%20if%0D%0Dtell%20(make%20InsertionLocator)%0D%09log%20do()%0D%09log%20is_closed_folder()%0D%09--%20Folders%20whose%20contents%20are%20not%20shown%20should%20not%20be%20insertion%20location%0D%09log%20set_allow_closed_folder(false)%27s%20do()%0D%09log%20is_closed_folder()%0Dend%20tell" />
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20GUIScriptingChecker%20:%20script%20%22GUIScriptingChecker%22%0Duse%20InsertionLocator%20:%20script%20%22InsertionLocator%22%0D%0Dif%20not%20do()%20of%20GUIScriptingChecker%20then%0D%09--%20GUI%20Scripting%20is%20disable%0D%09return%0Dend%20if%0D%0Dtell%20(make%20InsertionLocator)%0D%09--%20It%20is%20assumed%20that%20a%20folder%20is%20selected%20in%20Finder%20window%20of%20icon%20view.%0D%09log%20do()%20--%20if%20folder%20is%20selected,%20the%20item%20will%20be%20return.%0D%09log%20is_closed_folder()%20--%20true%0D%09%0D%09--%20Folders%20whose%20contents%20are%20not%20shown%20should%20not%20be%20insertion%20location%0D%09log%20set_allow_closed_folder(false)%27s%20do()%20--%20return%20container%20of%20selected%20folder.%0D%09log%20is_closed_folder()%20--%20false%0Dend%20tell" />
 </div><div>
 <span class="langKeyword">use</span> <span class="userDefine">GUIScriptingChecker</span><span class="normal"> : </span><span class="className">script</span><span class="normal"> &quot;GUIScriptingChecker&quot;</span>
 </div>
@@ -129,19 +129,23 @@ Accessors
 <span class="langKeyword">tell</span><span class="normal"> (</span><span class="commandName">make</span> <span class="userDefine">InsertionLocator</span><span class="normal">)</span>
 </div>
 <div style="text-indent:4ex;">
-<span class="commandName">log</span> <span class="userDefine">do</span><span class="normal">()</span>
+<span class="comment">-- It is assumed that a folder is selected in Finder window of icon view.</span>
 </div>
 <div style="text-indent:4ex;">
-<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">()</span>
+<span class="commandName">log</span> <span class="userDefine">do</span><span class="normal">() </span><span class="comment">-- if folder is selected, the item will be return.</span>
 </div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">() </span><span class="comment">-- true</span>
+</div>
+<br />
 <div style="text-indent:4ex;">
 <span class="comment">-- Folders whose contents are not shown should not be insertion location</span>
 </div>
 <div style="text-indent:4ex;">
-<span class="commandName">log</span> <span class="userDefine">set_allow_closed_folder</span><span class="normal">(</span><span class="enumeratedValues">false</span><span class="normal">)'s </span><span class="userDefine">do</span><span class="normal">()</span>
+<span class="commandName">log</span> <span class="userDefine">set_allow_closed_folder</span><span class="normal">(</span><span class="enumeratedValues">false</span><span class="normal">)'s </span><span class="userDefine">do</span><span class="normal">() </span><span class="comment">-- return container of selected folder.</span>
 </div>
 <div style="text-indent:4ex;">
-<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">()</span>
+<span class="commandName">log</span> <span class="userDefine">is_closed_folder</span><span class="normal">() </span><span class="comment">-- false</span>
 </div>
 <div>
 <span class="langKeyword">end</span> <span class="langKeyword">tell</span>
